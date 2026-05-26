@@ -32,7 +32,7 @@ SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://telegra.ph/file/f983d857f3c
 FSUB_IMG = (environ.get('FSUB_IMG', 'https://i.ibb.co/cShkPjcZ/x.jpg')).split() 
 
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '8981610607').split()] 
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1003801606506 -1001188070894 -1001274359769 -1002341565790 -1001685364040 -100169224324 -1001775437494 -1002223699552 -1002397109795 -1002461730224 -1002063173963').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1003990417513 -1001188070894 -1001274359769 -1002341565790 -1001685364040 -100169224324 -1001775437494 -1002223699552 -1002397109795 -1002461730224 -1002063173963').split()]
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1003999417050'))  
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1003999417050'))  
 MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '0'))  
@@ -44,13 +44,13 @@ REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_
 support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1003751247978') 
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://video:video@cluster0.gp0rn.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "myserialbot")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'AutofilterBot1')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://mvideo:mvideo@cluster0.bpj54.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "asuranj1")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'AutofilterBot')
 
 # If MULTIPLE_DB Is True Then Fill DATABASE_URI2 Value Else You Will Get Error.
 MULTIPLE_DB = is_enabled(os.environ.get('MULTIPLE_DB', "True"), True) # Type True For Turn On MULTIPLE DB FUNTION 
-DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://Erichdaniken:Erichdaniken@cluster0.vhu3d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://video:video@rishi.fzpls33.mongodb.net/?retryWrites=true&w=majority")
 DB_CHANGE_LIMIT = int(environ.get('DB_CHANGE_LIMIT', "432")) 
 
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/moviesearchgrp')
@@ -66,9 +66,9 @@ LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1003999417050'))
 LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1003999417050'))
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://telegra.ph/file/9ecc5d6e4df5b83424896.jpg")
 
-TUTORIAL = environ.get("TUTORIAL", "https://t.me/demoshort/81")
-TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/demoshort/81")
-TUTORIAL_3 = environ.get("TUTORIAL_3", "https://t.me/demoshort/81")
+TUTORIAL = environ.get("TUTORIAL", "https://t.me/demoshort/82")
+TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/demoshort/82")
+TUTORIAL_3 = environ.get("TUTORIAL_3", "https://t.me/demoshort/82")
 
 SHORTENER_API2 = environ.get("SHORTENER_API2", "ee6ed3feea08d70e8bfaf2fe30a8c72bae5baa32")
 SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", "arolinks.com")
@@ -79,7 +79,7 @@ SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "arolinks.com")
 SHORTENER_API3 = environ.get("SHORTENER_API3", "ee6ed3feea08d70e8bfaf2fe30a8c72bae5baa32")
 SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", "arolinks.com")
 
-TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "1200"))
+TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "54000"))
 THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "54000"))
 
 MOVIE_UPDATE_NOTIFICATION = bool(environ.get("MOVIE_UPDATE_NOTIFICATION", False))
