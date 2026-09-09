@@ -1021,12 +1021,26 @@ async def auto_filter(client, msg, spoll=False):
 
 async def ai_spell_check(chat_id, wrong_name):
     async def search_movie(wrong_name):
-        search_results = await asyncio.to_thread(imdb.search_movie, wrong_name)
-        movie_list = [movie.title for movie in search_results.titles]
-        return movie_list
+        try:
+            search_results = await asyncio.to_thread(imdb.search_movie, wrong_name)
+            # Safely check if search_results exists and has a titles attribute
+            if not search_results or not hasattr(search_results, 'titles') or not search_results.titles:
+                return []
+            
+            # Ensure each movie object actually contains a title attribute
+            movie_list = [
+                movie.title for movie in search_results.titles 
+                if movie and hasattr(movie, 'title') and movie.title
+            ]
+            return movie_list
+        except Exception as e:
+            LOGGER.error(f"Error in IMDB spell check search_movie: {e}")
+            return []
+
     movie_list = await search_movie(wrong_name)
     if not movie_list:
         return
+        
     for _ in range(5):
         closest_match = process.extractOne(wrong_name, movie_list)
         if not closest_match or closest_match[1] <= 80:
@@ -1035,7 +1049,9 @@ async def ai_spell_check(chat_id, wrong_name):
         files, offset, total_results = await get_search_results(chat_id=chat_id, query=movie)
         if files:
             return movie
-        movie_list.remove(movie)
+        if movie in movie_list:
+            movie_list.remove(movie)
+
 
 async def advantage_spell_chok(client, message):
     mv_id = message.id
